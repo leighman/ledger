@@ -3,3 +3,11 @@ Test as necessary, for example that only a transaction that balances to 0 can be
 Improve interactivity using some kind of curses library (purescript-blessed?)
 
 Use purescript-node-readline for repl, with purescript-optparse to parse commands if needed
+
+Use Int for account ids for now for easy selection (😅). Should use proper id and allow choosing an account by name
+Only supporting transactions in one currency ($) currently.
+UUID would be good for transaction id. Work out how to use that later.
+Amount in cents, probably use newtype to enforce this or something.
+
+Account balances calculated from transaction list on load? One source of truth + fine for now
+Is there a better way than nested map updates?
