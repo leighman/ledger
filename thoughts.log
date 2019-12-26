@@ -1,3 +1,5 @@
 Start off with a simple repl that has the three features, initially with dummy data then persisted as json? to file system.
 Test as necessary, for example that only a transaction that balances to 0 can be created.
 Improve interactivity using some kind of curses library (purescript-blessed?)
+
+Use purescript-node-readline for repl, with purescript-optparse to parse commands if needed
