@@ -17,3 +17,5 @@ Then add command handling.
 Transactions should support multiple inputs and outputs?
 
 Using `purty`. Formatting is a bit weird sometimes.
+
+Unclear what formatter/printf to use to specify digits after decimal place. `purescript-formatting` looks like it will add leading 0s.

@@ -14,6 +14,8 @@ derive newtype instance eqAccountId :: Eq AccountId
 
 derive newtype instance ordAccountId :: Ord AccountId
 
+derive newtype instance showAccountId :: Show AccountId
+
 type AccountInfo
   = { id :: AccountId
     , name :: String
