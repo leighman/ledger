@@ -1,6 +1,7 @@
 module Rendering where
 
 import Prelude
+import Global (toFixed)
 import Data.Int (toNumber)
 import Data.Map (lookup, toUnfoldable)
 import Data.Maybe (Maybe(..))
@@ -44,6 +45,10 @@ renderTransactions ledger =
 renderAmount :: Int -> String
 renderAmount x =
   let
-    n = (toNumber x) / 100.0
+    n = abs $ (toNumber x) / 100.0
+    formatted = toFixed 2 n
   in
-    if x > 0 then "$" <> show n else "- $" <> show (abs n)
+    case formatted of
+      Just f ->
+        if x > 0 then "$" <> f else "- $" <> f
+      _ -> ""

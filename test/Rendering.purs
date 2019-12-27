@@ -10,14 +10,14 @@ testRendering :: Spec Unit
 testRendering = do
   describe "Rendering" do
     it "renders amounts correctly" do
-      renderAmount 200000 `shouldEqual` "$2000.0"
-      renderAmount (-200000) `shouldEqual` "- $2000.0"
+      renderAmount 200000 `shouldEqual` "$2000.00"
+      renderAmount (-200000) `shouldEqual` "- $2000.00"
     it "renders accounts correctly" do
       let
         expected =
           """Accounts
 ========
-0 - Job | - $2000.0
+0 - Job | - $2000.00
 1 - Checking | $1949.57
 2 - Expenses | $50.43
 """
@@ -32,6 +32,6 @@ testRendering = do
 Checking -> Expenses | $50.43
 
 2019-12-01 - Salary
-Job -> Checking | $2000.0
+Job -> Checking | $2000.00
 """
       renderTransactions stubLedger `shouldEqual` expected
