@@ -8,9 +8,11 @@ You can edit this file as you like.
     , "effect"
     , "js-date"
     , "node-readline"
+    , "optparse"
     , "ordered-collections"
     , "psci-support"
     , "spec"
+    , "tuples"
     , "uuid"
     ]
 , packages = ./packages.dhall

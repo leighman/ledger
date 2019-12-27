@@ -19,3 +19,6 @@ Transactions should support multiple inputs and outputs?
 Using `purty`. Formatting is a bit weird sometimes.
 
 Unclear what formatter/printf to use to specify digits after decimal place. `purescript-formatting` looks like it will add leading 0s.
+
+Spent way too long trying to use optparse and it's not quite the right fit anyway! But learned about `ado`, `Tuple3`, good practice for being guided by types.
+Optparse didn't help with multi-word description :(
