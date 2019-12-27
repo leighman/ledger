@@ -1,5 +1,7 @@
 module Test.Stub where
 
+import Data.UUID (genUUID)
+import Effect.Unsafe (unsafePerformEffect)
 import Ledger (AccountId(..), Ledger, Transaction, initAccounts)
 import Persistence (PersistedAccount)
 
@@ -12,19 +14,19 @@ stubKnownAccounts =
 
 stubTransactions :: Array Transaction
 stubTransactions =
-  [ { id: 0
-    , utc: "2019-12-01"
-    , description: "Salary"
-    , fromAccountId: AccountId 0
-    , toAccountId: AccountId 1
-    , amount: 200000
-    }
-  , { id: 1
+  [ { id: unsafePerformEffect genUUID
     , utc: "2019-12-23"
     , description: "Christmas presents"
     , fromAccountId: AccountId 1
     , toAccountId: AccountId 2
     , amount: 5043
+    }
+  , { id: unsafePerformEffect genUUID
+    , utc: "2019-12-01"
+    , description: "Salary"
+    , fromAccountId: AccountId 0
+    , toAccountId: AccountId 1
+    , amount: 200000
     }
   ]
 

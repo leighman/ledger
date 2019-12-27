@@ -6,10 +6,12 @@ You can edit this file as you like.
 , dependencies =
     [ "console"
     , "effect"
+    , "js-date"
     , "node-readline"
     , "ordered-collections"
     , "psci-support"
     , "spec"
+    , "uuid"
     ]
 , packages = ./packages.dhall
 , sources = [ "src/**/*.purs", "test/**/*.purs" ]

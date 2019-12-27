@@ -28,10 +28,10 @@ testRendering = do
           """Transactions
 ============
 
-2019-12-01 - Salary
-Job -> Checking | $2000.0
-
 2019-12-23 - Christmas presents
 Checking -> Expenses | $50.43
+
+2019-12-01 - Salary
+Job -> Checking | $2000.0
 """
       renderTransactions stubLedger `shouldEqual` expected

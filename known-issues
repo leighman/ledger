@@ -1,0 +1,4 @@
+Transactions can only have one input and one output
+Accounts must be referenced by integer id
+Possible to (attempt to?) add transaction to non-existant account
+Transaction description must be 1 word

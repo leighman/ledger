@@ -1,0 +1,4 @@
+To run:
+ - `npm install`
+ - `spago install`
+ - `spago run`

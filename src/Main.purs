@@ -12,7 +12,8 @@ main = do
   let
     lineHandler :: Ledger -> LineHandler Unit
     lineHandler currentState input = do
-      handleCommand currentState input
+      newState <- handleCommand currentState input
+      setLineHandler interface $ lineHandler newState
       prompt interface
   setLineHandler interface $ lineHandler initialState
   prompt interface
