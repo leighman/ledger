@@ -11,3 +11,9 @@ Amount in cents, probably use newtype to enforce this or something.
 
 Account balances calculated from transaction list on load? One source of truth + fine for now
 Is there a better way than nested map updates?
+
+Not sure if initAccounts behaviour is correct. purescript-spec?
+Then add command handling.
+Transactions should support multiple inputs and outputs?
+
+Using `purty`. Formatting is a bit weird sometimes.

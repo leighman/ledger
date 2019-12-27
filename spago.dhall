@@ -9,6 +9,7 @@ You can edit this file as you like.
     , "node-readline"
     , "ordered-collections"
     , "psci-support"
+    , "spec"
     ]
 , packages = ./packages.dhall
 , sources = [ "src/**/*.purs", "test/**/*.purs" ]
