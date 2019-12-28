@@ -11,6 +11,7 @@ You can edit this file as you like.
     , "js-date"
     , "newtype"
     , "node-readline"
+    , "node-readline-aff"
     , "optparse"
     , "ordered-collections"
     , "psci-support"

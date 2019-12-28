@@ -123,6 +123,23 @@ let upstream =
 
 let overrides = {=}
 
-let additions = {=}
+let additions =
+  { node-readline-aff =
+      { dependencies =
+          [ "prelude"
+          , "console"
+          , "node-readline"
+          , "aff"
+          , "node-streams"
+          , "options"
+          , "exceptions"
+          , "either"
+          ]
+      , repo =
+          "https://github.com/ChrisPenner/purescript-node-readline-aff.git"
+      , version =
+          "v0.3.0"
+      }
+  }
 
 in  upstream // overrides // additions

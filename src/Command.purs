@@ -3,7 +3,8 @@ module Command where
 import Prelude
 import Data.String (Pattern(..), split)
 import Data.Tuple.Nested (get1)
-import Effect (Effect)
+import Effect.Aff (Aff)
+import Effect.Class (liftEffect)
 import Effect.Console (log)
 import Options.Applicative (Parser, ParserFailure(..), ParserResult(..), command, defaultPrefs, execParserPure, long, idm, info, int, metavar, number, option, strOption, subparser)
 import Options.Applicative.Help (renderHelp)
@@ -46,7 +47,7 @@ opts =
     )
 
 -- should be some kind of StateT?
-handleCommand :: Ledger -> String -> Effect Ledger
+handleCommand :: Ledger -> String -> Aff Ledger
 handleCommand currentState input = do
   let
     res =
@@ -58,17 +59,17 @@ handleCommand currentState input = do
     Success command -> do
       case command of
         Accounts -> do
-          log $ renderAccounts currentState
+          liftEffect $ log $ renderAccounts currentState
           pure currentState
         Transactions -> do
-          log $ renderTransactions currentState
+          liftEffect $ log $ renderTransactions currentState
           pure currentState
         AddTransaction (AddTransactionInfo { amount, from, to, description }) -> do
           -- TODO: smart constructor for AccountId that checks account exists
-          newState <- addTransaction currentState (AccountId from) (AccountId to) amount description
-          log $ renderTransactions newState
+          newState <- liftEffect $ addTransaction currentState (AccountId from) (AccountId to) amount description
+          liftEffect $ log $ renderTransactions newState
           pure newState
     Failure (ParserFailure f) -> do
-      log $ renderHelp 2 (get1 (f ">"))
+      liftEffect $ log $ renderHelp 2 (get1 (f ">"))
       pure currentState
     _ -> pure currentState
