@@ -4,7 +4,8 @@ import Prelude
 import Effect (Effect)
 import Node.ReadLine (LineHandler, createConsoleInterface, noCompletion, prompt, setLineHandler)
 import Command (handleCommand)
-import Ledger (Ledger, initialState)
+import Ledger (initialState)
+import Types (Ledger)
 
 main :: Effect Unit
 main = do

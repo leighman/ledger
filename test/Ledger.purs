@@ -6,7 +6,8 @@ import Data.Maybe (Maybe(..))
 import Test.Spec (Spec, describe, it)
 import Test.Spec.Assertions (shouldEqual)
 import Test.Stub (stubKnownAccounts, stubTransactions)
-import Ledger (AccountId(..), initAccounts)
+import Ledger (initAccounts)
+import Types (AccountId(..))
 
 testLedger :: Spec Unit
 testLedger = do

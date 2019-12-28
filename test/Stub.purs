@@ -1,27 +1,27 @@
 module Test.Stub where
 
-import Data.UUID (genUUID)
-import Effect.Unsafe (unsafePerformEffect)
-import Ledger (AccountId(..), Ledger, Transaction, initAccounts)
-import Persistence (PersistedAccount)
+import Ledger (initAccounts)
+import Persistence (PersistAccount)
+import Types (AccountId(..), Ledger, Transaction)
+import UUID (unsafeUUID)
 
-stubKnownAccounts :: Array PersistedAccount
+stubKnownAccounts :: Array PersistAccount
 stubKnownAccounts =
-  [ { id: 0, name: "Job" }
-  , { id: 1, name: "Checking" }
-  , { id: 2, name: "Expenses" }
+  [ { id: AccountId 0, name: "Job" }
+  , { id: AccountId 1, name: "Checking" }
+  , { id: AccountId 2, name: "Expenses" }
   ]
 
 stubTransactions :: Array Transaction
 stubTransactions =
-  [ { id: unsafePerformEffect genUUID
+  [ { id: unsafeUUID "a983f8fe-53b7-4f22-b69e-6a2985a87d79"
     , utc: "2019-12-23"
     , description: "Christmas presents"
     , fromAccountId: AccountId 1
     , toAccountId: AccountId 2
     , amount: 5043
     }
-  , { id: unsafePerformEffect genUUID
+  , { id: unsafeUUID "7c96cdb9-a2c9-406d-a70b-3a0e7d6c85de"
     , utc: "2019-12-01"
     , description: "Salary"
     , fromAccountId: AccountId 0

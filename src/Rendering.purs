@@ -8,7 +8,7 @@ import Data.Maybe (Maybe(..))
 import Data.String (joinWith)
 import Data.Tuple (Tuple(..))
 import Math (abs)
-import Ledger (AccountId(..), Ledger)
+import Types (AccountId(..), Ledger)
 
 renderAccounts :: Ledger -> String
 renderAccounts ledger =

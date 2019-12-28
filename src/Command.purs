@@ -7,8 +7,9 @@ import Effect (Effect)
 import Effect.Console (log)
 import Options.Applicative (Parser, ParserFailure(..), ParserResult(..), command, defaultPrefs, execParserPure, long, idm, info, int, metavar, number, option, strOption, subparser)
 import Options.Applicative.Help (renderHelp)
-import Ledger (AccountId(..), Ledger, addTransaction)
+import Ledger (addTransaction)
 import Rendering (renderAccounts, renderTransactions)
+import Types (AccountId(..), Ledger)
 
 newtype AddTransactionInfo
   = AddTransactionInfo

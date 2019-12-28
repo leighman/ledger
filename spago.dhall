@@ -4,9 +4,12 @@ You can edit this file as you like.
 -}
 { name = "my-project"
 , dependencies =
-    [ "console"
+    [ "argonaut-codecs"
+    , "argonaut-core"
+    , "console"
     , "effect"
     , "js-date"
+    , "newtype"
     , "node-readline"
     , "optparse"
     , "ordered-collections"
