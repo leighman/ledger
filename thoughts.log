@@ -22,3 +22,11 @@ Unclear what formatter/printf to use to specify digits after decimal place. `pur
 
 Spent way too long trying to use optparse and it's not quite the right fit anyway! But learned about `ado`, `Tuple3`, good practice for being guided by types.
 Optparse didn't help with multi-word description :(
+
+Feature complete?
+ * can create transactions to move assets between accounts
+ * can list accounts and their balances
+ * can list all transactions
+ * all transactions balance to 0
+ * state backed by filesystem
+ * some tests

@@ -1,8 +1,7 @@
 module Test.Stub where
 
-import Ledger (initAccounts)
-import Persistence (PersistAccount)
-import Types (AccountId(..), Ledger, Transaction)
+import Persistence (initAccounts)
+import Types (AccountId(..), Ledger, PersistAccount, Transaction)
 import UUID (unsafeUUID)
 
 stubKnownAccounts :: Array PersistAccount

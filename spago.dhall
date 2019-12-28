@@ -10,6 +10,8 @@ You can edit this file as you like.
     , "effect"
     , "js-date"
     , "newtype"
+    , "node-buffer"
+    , "node-fs-aff"
     , "node-readline"
     , "node-readline-aff"
     , "optparse"

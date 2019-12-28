@@ -41,3 +41,21 @@ type Ledger
     , transactions :: Array Transaction
     }
 
+type PersistAccount
+  = { id :: AccountId
+    , name :: String
+    }
+
+type PersistTransaction
+  = { id :: UUID
+    , utc :: String
+    , description :: String
+    , fromAccountId :: AccountId
+    , toAccountId :: AccountId
+    , amount :: Int
+    }
+
+type PersistLedger
+  = { accounts :: Array PersistAccount
+    , transactions :: Array PersistTransaction
+    }
